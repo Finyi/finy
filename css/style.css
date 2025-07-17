@@ -162,6 +162,12 @@ main{
 .sect1>p{
     max-width: 15em;
 }
+.header-img{
+    position: absolute;
+    left: -35px;
+    width: 82px;
+    transform: rotate(40deg);
+}
 .sect2{
     display: block;
     justify-content: center;
@@ -221,11 +227,20 @@ main{
     height: 250px;
 }
 footer{
+    position: relative;
     width: 100%;
     height: 10em;
     padding: 0;
     margin: 0;
     border-top: 1px solid var(--sct-brd-clr);
+    overflow-x: hidden;
+}
+.footer-img{
+    position: absolute;
+    right: -30px;
+    bottom: 10px; 
+    width: 120px;
+    transform: rotate(-25deg);
 }
 @media (max-width: 1204px){
     .sect3{
