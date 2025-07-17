@@ -5,7 +5,7 @@
     --bg-clr: #0a0a0c;
     --hdr-clr: oklch(18.356% 0.00609 285.743 / 0.199);
     --sct-brd-clr: #222227;
-    --btn-brd-clr: #141416;
+    --btn-brd-clr: #141416c5;
     --btn-brd-clr-act: #2d2dc4;
 }
 ::-webkit-scrollbar {
@@ -31,9 +31,15 @@ a{
     text-decoration: none;
 }
 header{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     background: var(--hdr-clr);
+    width: 100%;
     max-width: 48em;
     height: 42px;
     margin: auto;
@@ -114,6 +120,9 @@ button{
 .night-box{
     display: none;
 }
+.night-arrow{
+    display: none;
+}
 .overlay{
     position: fixed;
     top: 0;
@@ -149,8 +158,8 @@ button{
 .modal-info{
     margin: 25px auto;
     padding: 10px;
-    max-width: 38em;
-    height: 91em;
+    max-width: 45em;
+    height: 82em;
     border: 1px solid white;
 }
 .modal-info>p{
@@ -158,10 +167,26 @@ button{
     width: 90%;
     color: #d1d1d1;
 }
+.button-top{
+    display: none;
+    position: fixed;
+    border: 1px solid var(--btn-brd-clr);
+    background: inherit;
+    cursor: pointer;
+    right: 25px;
+    bottom: 25px;
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+    transition: all 0.2s;
+}
+.button-top:hover{
+    background: var(--btn-brd-clr);
+}
 .social-sect{
     display: flex;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 78px;
 }
 .social-button{
     display: inline-block;
@@ -280,34 +305,44 @@ footer{
     .sect3{
         height: 200em;
     }
+}
+@media (max-width: 767px){
     .modal-info{
-        height: 95em;
+        height: 88em;
     }
 }
-@media (max-width: 610px){
+@media (max-width: 712px){
     .modal-info{
-        height: 121em;
+        height: 94em;
+    }
+}
+@media (max-width: 666px){
+    .modal-info{
+        height: 100em;
+    }
+}
+@media (max-width: 621px){
+    .modal-info{
+        height: 105em;
+    }
+}
+@media (max-width: 592px){
+    .modal-info{
+        height: 109em;
     }
 }
 @media (max-width: 573px){
     .modal-info{
-        height: 125em;
+        height: 115em;
     }
 }
-@media (max-width: 537px){
+@media (max-width: 552px){
     .modal-info{
-        height: 128em;
+        height: 123em;
     }
 }
-@media (max-width: 507px){
+@media (max-width: 523px){
     .modal-info{
-        height: 130em;
+        height: 127em;
     }
 }
-@media (max-width: 385px){
-    .modal-info{
-        height: 155em;
-    }
-}
-
-
