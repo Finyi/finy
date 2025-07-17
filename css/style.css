@@ -40,7 +40,7 @@ header{
     backdrop-filter: blur(12px);
     background: var(--hdr-clr);
     width: 100%;
-    max-width: 48em;
+    max-width: 28em;
     height: 42px;
     margin: auto;
     margin-top: 12px;
@@ -96,76 +96,11 @@ button{
 .button-theme:hover{
     background: var(--btn-brd-clr);
 }
-.button-box-secrets{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 32px;
-    height: 32px;
-    background: inherit;
-    border: 1px solid var(--btn-brd-clr);
-    border-radius: 25px;
-    transition: all 0.2s;
-    cursor: pointer;
-    float: right;
-    margin-top: 4px;
-    margin-right: 6px;
-}
-.button-box-secrets:hover{
-    background: var(--btn-brd-clr);
-}
 .night-theme{
-    display: none;
-}
-.night-box{
     display: none;
 }
 .night-arrow{
     display: none;
-}
-.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.329);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-.close-button{
-    float: right;
-    color: #fff;
-    background: inherit;
-    cursor: pointer;
-}
-.modal-container{
-    background: var(--bg-clr);
-    border: 1px solid var(--btn-brd-clr);
-    padding: 15px;
-    border-radius: 15px;
-    text-align: center;
-    width: 780px;
-    height: 540px;
-    overflow: auto;
-}
-.modal-container>h2{
-    margin-left: 50px;
-}
-.modal-info{
-    margin: 25px auto;
-    padding: 10px;
-    max-width: 45em;
-    height: 82em;
-    border: 1px solid white;
-}
-.modal-info>p{
-    margin-top: 8px;
-    width: 90%;
-    color: #d1d1d1;
 }
 .button-top{
     display: none;
@@ -178,6 +113,7 @@ button{
     width: 42px;
     height: 42px;
     border-radius: 21px;
+    z-index: 100;
     transition: all 0.2s;
 }
 .button-top:hover{
@@ -291,58 +227,23 @@ footer{
     margin: 0;
     border-top: 1px solid var(--sct-brd-clr);
 }
-@media (max-width: 1203px){
+@media (max-width: 1204px){
     .sect3{
-        height: 86em;
+        height: 84em;
     }
 }
-@media (max-width: 925px){
+@media (max-width: 926px){
     .sect3{
-        height: 110em;
+        height: 105em;
     }
 }
-@media (max-width: 645px){
+@media (max-width: 648px){
     .sect3{
         height: 200em;
     }
 }
-@media (max-width: 767px){
-    .modal-info{
-        height: 88em;
-    }
-}
-@media (max-width: 712px){
-    .modal-info{
-        height: 94em;
-    }
-}
-@media (max-width: 666px){
-    .modal-info{
-        height: 100em;
-    }
-}
-@media (max-width: 621px){
-    .modal-info{
-        height: 105em;
-    }
-}
-@media (max-width: 592px){
-    .modal-info{
-        height: 109em;
-    }
-}
-@media (max-width: 573px){
-    .modal-info{
-        height: 115em;
-    }
-}
-@media (max-width: 552px){
-    .modal-info{
-        height: 123em;
-    }
-}
-@media (max-width: 523px){
-    .modal-info{
-        height: 127em;
+@media (max-width: 486px){
+    header{
+        width: 85%;
     }
 }
