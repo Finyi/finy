@@ -234,6 +234,7 @@ footer{
     margin: 0;
     border-top: 1px solid var(--sct-brd-clr);
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .footer-img{
     position: absolute;
