@@ -2,14 +2,15 @@
 :root{
     --txt-clr: rgb(0, 209, 70);
     --txt-clr2: rgb(0, 0, 0);
-    --sub-txt: rgb(124, 124, 124);
+    --sub-txt: rgb(88, 88, 88);
     --bg-clr: rgb(255, 255, 255);
     --hdr-clr: oklch(100% 0.00011 271.152 / 0.466);
     --ftr-clr: rgb(240, 240, 240);
     --sct-brd-clr: rgb(209, 209, 209);
-    --btn-brd-clr: #dfdfe7b0;
-    --btn-clr: #fff;
-    --btn-brd-clr-act: rgb(0, 89, 255);
+    --thm-btn-bg-clr: rgb(255, 255, 255);
+    --btn-brd-clr: rgb(53, 53, 53);
+    --btn-clr: rgb(255, 255, 255);
+    --btn-brd-clr-act: rgb(38, 168, 255);
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -79,15 +80,13 @@ button{
     height: 32px;
     margin-top: 4px;
     margin-right: 15px;
-    background: none;
-    border: 1px solid var(--btn-brd-clr);
+    background: var(--thm-btn-bg-clr);
     border-radius: 2em;
     cursor: pointer;
     transition: all 0.2s;
-
 }
 #themeButton:hover{
-    background: var(--btn-brd-clr);
+    background: var(--btn-brd-clr-act);
 }
 .links-container{
     display: flex;
@@ -127,7 +126,7 @@ main{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 20em;
+    height: 25em;
     border-bottom: 2px solid var(--sct-brd-clr);
 }
 .biography-container{
@@ -147,45 +146,10 @@ main{
 }
 .biography-container>p{
     max-width: 24em;
+    margin-top: 10px;
+    text-align: left;
 }
-.sect2{
-    display: block;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
-    width: 100%;
-    height: 50em;
-    border-bottom: 1px solid var(--sct-brd-clr);
-}
-.slider{
-    position: relative;
-    margin: 0 auto;
-    margin-top: 25px;
-    max-width: 95em;
-    height: 40em;
-    filter: drop-shadow(0px 0px 10px #00000060);
-}
-.slide{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    border-radius: 19px;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s;
-}
-.slide:first-child {
-  opacity: 1;
-}
-.slide img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.sect3{
+.playlist{
     display: block;
     margin: auto;
     justify-content: center;
