@@ -8,6 +8,7 @@
     --hdr-clr: oklch(18.356% 0.00609 285.743 / 0.473);
     --ftr-clr: rgb(12, 12, 12);
     --sct-brd-clr: rgb(29, 29, 29);
+    --thm-btn-bg-clr: rgb(27, 27, 27);
     --btn-brd-clr: rgb(26, 26, 26);
     --btn-brd-clr-act: rgb(0, 170, 57);
 }
@@ -79,14 +80,13 @@ button{
     height: 32px;
     margin-top: 4px;
     margin-right: 15px;
-    background: none;
-    border: 1px solid var(--btn-brd-clr);
+    background: var(--thm-btn-bg-clr);
     border-radius: 2em;
     cursor: pointer;
     transition: all 0.2s;
 }
 #themeButton:hover{
-    background: var(--btn-brd-clr);
+    background: var(--btn-brd-clr-act);
 }
 .links-container{
     display: flex;
@@ -125,7 +125,7 @@ main{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 20em;
+    height: 25em;
     border-bottom: 2px solid var(--sct-brd-clr);
 }
 .biography-container{
@@ -144,44 +144,10 @@ main{
 }
 .biography-container>p{
     max-width: 24em;
+    margin-top: 10px;
+    text-align: left;
 }
-.sect2{
-    display: block;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
-    width: 100%;
-    height: 50em;
-    border-bottom: 2px solid var(--sct-brd-clr);
-}
-.slider{
-    position: relative;
-    margin: 0 auto;
-    margin-top: 25px;
-    max-width: 95em;
-    height: 40em;
-}
-.slide{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    border-radius: 19px;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s;
-}
-.slide:first-child {
-  opacity: 1;
-}
-.slide img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.sect3{
+.playlist{
     display: block;
     margin: auto;
     justify-content: center;
