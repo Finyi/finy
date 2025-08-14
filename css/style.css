@@ -210,17 +210,17 @@ footer{
     transform: rotate(-25deg);
 }
 @media (max-width: 1204px){
-    .sect3{
+    .playlist{
         height: 84em;
     }
 }
 @media (max-width: 926px){
-    .sect3{
+    .playlist{
         height: 105em;
     }
 }
 @media (max-width: 648px){
-    .sect3{
+    .playlist{
         height: 200em;
     }
 }
