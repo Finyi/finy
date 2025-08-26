@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 :root{
-    --txt-clr: rgb(0, 255, 85);
+    --txt-clr: rgb(255, 255, 255);
     --txt-clr2: rgb(255, 255, 255);
     --sub-txt: rgb(185, 185, 185);
     --bg-clr: rgb(0, 0, 0);
@@ -10,7 +10,7 @@
     --sct-brd-clr: rgb(29, 29, 29);
     --thm-btn-bg-clr: rgb(27, 27, 27);
     --btn-brd-clr: rgb(26, 26, 26);
-    --btn-brd-clr-act: rgb(0, 170, 57);
+    --btn-brd-clr-act: rgb(54, 54, 54);
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -20,7 +20,7 @@
     background: inherit;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(0, 255, 85);
+    background-color: rgb(73, 73, 73);
     border-radius: 12px;
 }
 body{
@@ -99,15 +99,15 @@ button{
     color: var(--txt-clr2);
 }
 .link-button{
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 3em;
+    width: 2em;
     height: 2em;
     margin: 0 6px;
     background: inherit;
     border: 1px solid var(--btn-brd-clr);
-    border-radius: 2em;
+    border-radius: 0.8em;
     cursor: pointer;
     transition: all 0.5s;
 }
@@ -115,6 +115,16 @@ button{
     transform: scale(1.1);
     border: 1px solid var(--btn-brd-clr-act);
     color: var(--txt-clr);
+}
+.links-container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 1em;
+}
+.links-container2>a{
+    color: var(--txt-clr2);
 }
 main{
     margin-right: 2em;
@@ -125,7 +135,7 @@ main{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 25em;
+    height: 33em;
     border-bottom: 2px solid var(--sct-brd-clr);
 }
 .biography-container{
