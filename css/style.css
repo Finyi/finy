@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 :root{
-    --txt-clr: rgb(255, 255, 255);
-    --txt-clr2: rgb(255, 255, 255);
-    --sub-txt: rgb(185, 185, 185);
-    --bg-clr: rgb(0, 0, 0);
-    --hdr-clr: oklch(18.356% 0.00609 285.743 / 0.473);
-    --ftr-clr: rgb(12, 12, 12);
-    --sct-brd-clr: rgb(29, 29, 29);
-    --thm-btn-bg-clr: rgb(27, 27, 27);
-    --btn-brd-clr: rgb(26, 26, 26);
-    --btn-brd-clr-act: rgb(54, 54, 54);
+    --txt-clr: rgb(0, 0, 0);
+    --txt-clr2: rgb(0, 0, 0);
+    --sub-txt: rgb(88, 88, 88);
+    --bg-clr: rgb(255, 255, 255);
+    --hdr-clr: oklch(100% 0.00011 271.152 / 0.466);
+    --ftr-clr: rgb(240, 240, 240);
+    --sct-brd-clr: rgb(209, 209, 209);
+    --thm-btn-bg-clr: rgb(255, 255, 255);
+    --btn-brd-clr: rgb(53, 53, 53);
+    --btn-clr: rgb(110, 110, 110);
+    --btn-brd-clr-act: rgb(201, 201, 201);
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -20,13 +20,13 @@
     background: inherit;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(73, 73, 73);
+    background-color: rgb(117, 117, 117);
     border-radius: 12px;
 }
 body{
     margin: 0;
     background-color: var(--bg-clr);
-    color: var(--txt-clr);
+    color: var(--main-txt);
     font-family: "Source Code Pro", monospace;
 }
 a{
@@ -51,7 +51,7 @@ header{
 h1{
     font-weight: 500;
     float: left;
-    color: var(--txt-clr);
+    color: var(--txt2-clr);
     font-size: 0.9rem;
     margin-left: 12px;
 }
@@ -68,7 +68,7 @@ p{
 button{
     border: none;
 }
-.night-theme{
+.light-theme{
     display: none;
 }
 #themeButton{
@@ -99,7 +99,7 @@ button{
     color: var(--txt-clr2);
 }
 .link-button{
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 2em;
@@ -113,8 +113,8 @@ button{
 }
 .link-button:hover{
     transform: scale(1.1);
-    border: 1px solid var(--btn-brd-clr-act);
-    color: var(--txt-clr);
+    border: 1px solid var(--btn-clr);
+    color: var(--btn-clr);
 }
 .links-container2{
     display: flex;
@@ -127,6 +127,7 @@ button{
     color: var(--txt-clr2);
 }
 main{
+    display: block;
     margin-right: 2em;
     margin-left: 2em;
 }
@@ -151,6 +152,7 @@ main{
     object-fit: cover;
     width: 128px;
     border-radius: 1.4em;
+    filter: drop-shadow(0px 0px 10px #0000005b);
 }
 .biography-container>p{
     max-width: 24em;
@@ -178,6 +180,7 @@ main{
     margin-top: 25px;
     width: 250px;
     height: 250px;
+    filter: drop-shadow(0px 0px 10px #0000005b);
 }
 .button-top-container{
     display: flex;
@@ -218,6 +221,7 @@ footer{
     bottom: 10px; 
     width: 120px;
     transform: rotate(-25deg);
+    filter: drop-shadow(0px 0px 10px #0000003a);
 }
 @media (max-width: 1204px){
     .playlist{
