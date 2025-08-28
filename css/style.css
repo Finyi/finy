@@ -1,23 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 :root{
-    --txt-clr: rgb(255, 255, 255);
-    --txt-clr2: rgb(255, 255, 255);
-    --sub-txt: rgb(185, 185, 185);
     --bg-clr: rgb(0, 0, 0);
     --hdr-clr: oklch(18.356% 0.00609 285.743 / 0.473);
-    --ftr-clr: rgb(12, 12, 12);
-    --sct-brd-clr: rgb(29, 29, 29);
-    --thm-btn-bg-clr: rgb(27, 27, 27);
-    --btn-brd-clr: rgb(26, 26, 26);
+    --h1-clr: white;
+    --btn-brd-clr: rgb(32, 32, 32);
     --btn-brd-clr-act: rgb(54, 54, 54);
+    --section-brd-clr: rgb(29, 29, 29);
+    --sub-txt: rgb(185, 185, 185);
+    --ftr-clr: rgb(12, 12, 12);
 }
 ::-webkit-scrollbar {
     width: 5px;
     border-radius: 12px;
 }
 ::-webkit-scrollbar-track {
-    background: inherit;
+    background: var(--bg-clr)
 }
 ::-webkit-scrollbar-thumb {
     background-color: rgb(73, 73, 73);
@@ -27,36 +24,31 @@ body{
     margin: 0;
     background-color: var(--bg-clr);
     color: var(--txt-clr);
-    font-family: "Source Code Pro", monospace;
+    font-family: "Inter", sans-serif;
+}
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.18;
+    background: #000;
+    mix-blend-mode: screen;
+    filter: url(#noise);
 }
 a{
     text-decoration: none;
 }
-header{
-    position: fixed;
-    width: 100%;
-    max-width: 19em;
-    height: 42px;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0.5em;
-    border-radius: 1.2em;
-    background: var(--hdr-clr);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--sct-brd-clr);
-    padding: 5px;
-    z-index: 999;
-}
 h1{
     font-weight: 500;
     float: left;
-    color: var(--txt-clr);
+    color: var(--h1-clr);
     font-size: 0.9rem;
     margin-left: 12px;
 }
 h2{
-    color: var(--txt-clr2);
+    color: var(--h1-clr);
     text-align: center;
 }
 p{
@@ -67,6 +59,19 @@ p{
 }
 button{
     border: none;
+}
+header{
+    position: fixed;
+    width: 100%;
+    height: 42px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--hdr-clr);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--section-brd-clr);
+    padding: 5px;
+    z-index: 999;
 }
 .night-theme{
     display: none;
@@ -80,13 +85,33 @@ button{
     height: 32px;
     margin-top: 4px;
     margin-right: 15px;
-    background: var(--thm-btn-bg-clr);
+    background: rgba(0, 0, 0, 0);
     border-radius: 2em;
     cursor: pointer;
     transition: all 0.2s;
 }
 #themeButton:hover{
-    background: var(--btn-brd-clr-act);
+    background: var(--bg-clr);
+}
+.header-bg{
+    width: 100%;
+    height: 35vh;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+.biography-pfp{
+    position: absolute;
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 148px;
+}
+.biography-pfp>img{
+    object-fit: cover;
+    width: 148px;
+    border-radius: 2em;
 }
 .links-container{
     display: flex;
@@ -96,7 +121,7 @@ button{
     margin-top: 4.875em;
 }
 .links-container>a{
-    color: var(--txt-clr2);
+    color: var(--h1-clr);
 }
 .link-button{
     display: flex;
@@ -114,17 +139,7 @@ button{
 .link-button:hover{
     transform: scale(1.1);
     border: 1px solid var(--btn-brd-clr-act);
-    color: var(--txt-clr);
-}
-.links-container2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 1em;
-}
-.links-container2>a{
-    color: var(--txt-clr2);
+    color: var(--h1-clr);
 }
 main{
     margin-right: 2em;
@@ -135,26 +150,17 @@ main{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 33em;
-    border-bottom: 2px solid var(--sct-brd-clr);
+    height: 18em;
+    border-bottom: 1px solid var(--section-brd-clr);
 }
 .biography-container{
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
-.biography-pfp{
-    display: flex;
-    justify-content: center;
-}
-.biography-pfp>img{
-    object-fit: cover;
-    width: 128px;
-    border-radius: 1.4em;
-}
 .biography-container>p{
-    max-width: 24em;
-    margin-top: 10px;
+    max-width: 28em;
+    margin-top: 5px;
     text-align: left;
 }
 .playlist{
@@ -165,7 +171,7 @@ main{
     align-items: center;
     margin-top: 25px;
     width: 100%;
-    height: 68em;
+    height: 70vh;
 }
 .spotify-tracks{
     margin-top: 20px;
@@ -176,66 +182,47 @@ main{
     display: inline-block;
     margin-left: 25px;
     margin-top: 25px;
-    width: 250px;
-    height: 250px;
-}
-.button-top-container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-#TopButton{
-    display: flex;
-    background: var(--btn-brd-clr-act);
-    cursor: pointer;
-    width: 8em;
-    height: 2em;
-    border-top-left-radius: 2em;
-    border-top-right-radius: 2em;
-    transition: all 0.2s;
-}
-#TopButton:hover{
-    transform: scale(1.2);
+    width: 225px;
+    overflow: hidden;
 }
 footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    position: relative;
     width: 100%;
-    height: 8.5em;
+    height: 7vh;
     padding: 0;
     margin: 0;
-    border-top: 2px solid var(--sct-brd-clr);
     background: var(--ftr-clr);
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
 }
-.footer-img{
-    position: absolute;
-    right: -30px;
-    bottom: 10px; 
-    width: 120px;
-    transform: rotate(-25deg);
+footer p{
+    font-size: 0.9rem;
 }
-@media (max-width: 1204px){
+@media (max-width: 1400px){
     .playlist{
-        height: 84em;
+        height: 110vh;
     }
 }
-@media (max-width: 926px){
+@media (max-width: 863px){
     .playlist{
-        height: 105em;
+        height: 130vh;
     }
 }
-@media (max-width: 648px){
+@media (max-width: 940px){
     .playlist{
-        height: 200em;
+        height: 165vh;
+    }
+}
+@media (max-width: 610px){
+    .playlist{
+        height: 255vh;
     }
 }
 @media (max-width: 486px){
     header{
         width: 85%;
+        border-radius: 1.2em;
+        margin-top: 0.5em;
     }
 }
