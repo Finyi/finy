@@ -1,62 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 :root{
-    --txt-clr: rgb(0, 0, 0);
-    --txt-clr2: rgb(0, 0, 0);
-    --sub-txt: rgb(88, 88, 88);
-    --bg-clr: rgb(255, 255, 255);
-    --hdr-clr: oklch(100% 0.00011 271.152 / 0.466);
-    --ftr-clr: rgb(240, 240, 240);
-    --sct-brd-clr: rgb(209, 209, 209);
-    --thm-btn-bg-clr: rgb(255, 255, 255);
+    --bg-clr: rgb(238, 238, 238);
+    --hdr-clr: oklch(18.356% 0.00609 285.743 / 0.473);
+    --h1-clr: white;
+    --h2-clr: black;
     --btn-brd-clr: rgb(53, 53, 53);
-    --btn-clr: rgb(110, 110, 110);
-    --btn-brd-clr-act: rgb(201, 201, 201);
+    --btn-clr: rgb(78, 78, 78);
+    --section-brd-clr: rgb(29, 29, 29);
+    --sub-txt: rgb(32, 32, 32);
+    --ftr-clr: rgb(12, 12, 12);
 }
 ::-webkit-scrollbar {
     width: 5px;
     border-radius: 12px;
 }
 ::-webkit-scrollbar-track {
-    background: inherit;
+    background: var(--bg-clr);
 }
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(117, 117, 117);
+    background-color: rgb(133, 133, 133);
     border-radius: 12px;
 }
 body{
     margin: 0;
     background-color: var(--bg-clr);
     color: var(--main-txt);
-    font-family: "Source Code Pro", monospace;
+    font-family: "Inter", sans-serif;
+}
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.4;
+    background: #fff;
+    mix-blend-mode: multiply;
+    filter: url(#noise);
 }
 a{
     text-decoration: none;
 }
-header{
-    position: fixed;
-    width: 100%;
-    max-width: 19em;
-    height: 42px;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 0.5em;
-    border-radius: 1.2em;
-    background: var(--hdr-clr);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--sct-brd-clr);
-    padding: 5px;
-    z-index: 999;
-}
 h1{
     font-weight: 500;
     float: left;
-    color: var(--txt2-clr);
+    color: var(--h1-clr);
     font-size: 0.9rem;
     margin-left: 12px;
 }
 h2{
-    color: var(--txt-clr2);
+    color: var(--h2-clr);
     text-align: center;
 }
 p{
@@ -67,6 +60,19 @@ p{
 }
 button{
     border: none;
+}
+header{
+    position: fixed;
+    width: 100%;
+    height: 42px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--hdr-clr);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--section-brd-clr);
+    padding: 5px;
+    z-index: 999;
 }
 .light-theme{
     display: none;
@@ -80,13 +86,33 @@ button{
     height: 32px;
     margin-top: 4px;
     margin-right: 15px;
-    background: var(--thm-btn-bg-clr);
+    background: rgba(0, 0, 0, 0);
     border-radius: 2em;
     cursor: pointer;
     transition: all 0.2s;
 }
 #themeButton:hover{
-    background: var(--btn-brd-clr-act);
+    background: oklch(18.356% 0.00609 285.743 / 0.856);
+}
+.header-bg{
+    width: 100%;
+    height: 35vh;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+.biography-pfp{
+    position: absolute;
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 148px;
+}
+.biography-pfp>img{
+    object-fit: cover;
+    width: 148px;
+    border-radius: 2em;
 }
 .links-container{
     display: flex;
@@ -96,7 +122,7 @@ button{
     margin-top: 4.875em;
 }
 .links-container>a{
-    color: var(--txt-clr2);
+    color: var(--h2-clr);
 }
 .link-button{
     display: inline-flex;
@@ -116,16 +142,6 @@ button{
     border: 1px solid var(--btn-clr);
     color: var(--btn-clr);
 }
-.links-container2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 1em;
-}
-.links-container2>a{
-    color: var(--txt-clr2);
-}
 main{
     display: block;
     margin-right: 2em;
@@ -136,27 +152,17 @@ main{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 33em;
-    border-bottom: 2px solid var(--sct-brd-clr);
+    height: 18em;
+    border-bottom: 1px solid var(--section-brd-clr);
 }
 .biography-container{
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
-.biography-pfp{
-    display: flex;
-    justify-content: center;
-}
-.biography-pfp>img{
-    object-fit: cover;
-    width: 128px;
-    border-radius: 1.4em;
-    filter: drop-shadow(0px 0px 10px #0000005b);
-}
 .biography-container>p{
-    max-width: 24em;
-    margin-top: 10px;
+    max-width: 28em;
+    margin-top: 5px;
     text-align: left;
 }
 .playlist{
@@ -167,7 +173,7 @@ main{
     align-items: center;
     margin-top: 25px;
     width: 100%;
-    height: 68em;
+    height: 70vh;
 }
 .spotify-tracks{
     margin-top: 20px;
@@ -178,68 +184,49 @@ main{
     display: inline-block;
     margin-left: 25px;
     margin-top: 25px;
-    width: 250px;
-    height: 250px;
+    width: 225px;
+    overflow: hidden;
     filter: drop-shadow(0px 0px 10px #0000005b);
-}
-.button-top-container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-#TopButton{
-    display: flex;
-    background: var(--btn-brd-clr-act);
-    cursor: pointer;
-    width: 8em;
-    height: 2em;
-    border-top-left-radius: 2em;
-    border-top-right-radius: 2em;
-    transition: all 0.2s;
-}
-#TopButton:hover{
-    transform: scale(1.2);
 }
 footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    position: relative;
     width: 100%;
-    height: 8.5em;
+    height: 7vh;
     padding: 0;
     margin: 0;
-    border-top: 2px solid var(--sct-brd-clr);
     background: var(--ftr-clr);
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
 }
-.footer-img{
-    position: absolute;
-    right: -30px;
-    bottom: 10px; 
-    width: 120px;
-    transform: rotate(-25deg);
-    filter: drop-shadow(0px 0px 10px #0000003a);
+footer p{
+    color: var(--h1-clr);
+    font-size: 0.9rem;
 }
-@media (max-width: 1204px){
+@media (max-width: 1371px){
     .playlist{
-        height: 84em;
+        height: 110vh;
     }
 }
-@media (max-width: 926px){
+@media (max-width: 863px){
     .playlist{
-        height: 105em;
+        height: 130vh;
     }
 }
-@media (max-width: 648px){
+@media (max-width: 940px){
     .playlist{
-        height: 200em;
+        height: 165vh;
+    }
+}
+@media (max-width: 610px){
+    .playlist{
+        height: 255vh;
     }
 }
 @media (max-width: 486px){
     header{
         width: 85%;
+        border-radius: 1.2em;
+        margin-top: 0.5em;
     }
 }
