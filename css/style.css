@@ -1,213 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 :root {
-  --bg-clr: rgb(0, 0, 0);
-  --hdr-clr: oklch(18.356% 0.00609 285.743 / 0.473);
-  --h1-clr: white;
-  --btn-brd-clr: rgb(32, 32, 32);
-  --btn-brd-clr-act: rgb(54, 54, 54);
-  --section-brd-clr: rgb(29, 29, 29);
-  --sub-txt: rgb(185, 185, 185);
-  --ftr-clr: rgb(12, 12, 12);
+  --bg-color: #121212;
+  --link-color: rgb(73, 249, 73);
+  --link-color-active: rgb(176, 255, 176);
 }
-::-webkit-scrollbar {
-  width: 5px;
-  border-radius: 12px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-clr);
-}
-::-webkit-scrollbar-thumb {
-  background-color: rgb(73, 73, 73);
-  border-radius: 12px;
+*{
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
 }
 body {
   margin: 0;
-  background-color: var(--bg-clr);
-  color: var(--txt-clr);
-  font-family: "Inter", sans-serif;
+  padding: 15px;
+  background-color: var(--bg-color);
+  color: white;
 }
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.18;
-  background: #000;
-  mix-blend-mode: screen;
-  filter: url(#noise);
+h2{
+  font-size: clamp(10pt, 3vw, 14pt);
 }
-a {
-  text-decoration: none;
+p{
+  font-size: clamp(7pt, 3vw, 10pt);
 }
-h1 {
-  font-weight: 500;
-  float: left;
-  color: var(--h1-clr);
-  font-size: 0.9rem;
-  margin-left: 12px;
+a{
+  color: var(--link-color);
+  font-size: clamp(7pt, 3vw, 10pt);
+  width: 120px;
 }
-h2 {
-  color: var(--h1-clr);
-  text-align: center;
+a:hover{
+  color: var(--link-color-active);
 }
-p {
-  font-weight: 400;
-  color: var(--sub-txt);
-  text-align: center;
-  margin: auto;
+hr {
+  opacity: 0.4;
 }
-button {
-  border: none;
-}
-header {
-  position: fixed;
-  width: 100%;
-  height: 42px;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--hdr-clr);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--section-brd-clr);
-  padding: 5px;
-  z-index: 999;
-}
-.night-theme {
-  display: none;
-}
-#themeButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: right;
-  width: 32px;
-  height: 32px;
-  margin-top: 4px;
-  margin-right: 15px;
-  background: rgba(0, 0, 0, 0);
-  border-radius: 2em;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-#themeButton:hover {
-  background: var(--bg-clr);
-}
-.header-bg {
-  width: 100%;
-  height: 35vh;
-  top: 0;
-  left: 0;
-  z-index: -2;
-  overflow: hidden;
-}
-.biography-pfp {
-  position: absolute;
-  top: 25vh;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 148px;
-}
-.biography-pfp > img {
-  object-fit: cover;
-  width: 148px;
-  border-radius: 2em;
-}
-.links-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  margin-top: 4.875em;
-}
-.links-container > a {
-  color: var(--h1-clr);
-}
-.link-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2em;
-  height: 2em;
-  margin: 0 6px;
-  background: inherit;
-  border: 1px solid var(--btn-brd-clr);
-  border-radius: 0.8em;
-  cursor: pointer;
-  transition: all 0.5s;
-}
-.link-button:hover {
-  transform: scale(1.1);
-  border: 1px solid var(--btn-brd-clr-act);
-  color: var(--h1-clr);
-}
-main {
-  margin-right: 2em;
-  margin-left: 2em;
-}
-.biography {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 18em;
-  border-bottom: 1px solid var(--section-brd-clr);
-}
-.biography-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.biography-container > p {
-  max-width: 28em;
-  margin-top: 5px;
-  text-align: left;
-}
-.playlist {
-  display: block;
-  margin: auto;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  margin-top: 25px;
-  width: 100%;
-  height: 55vh;
-  border-bottom: 1px solid var(--section-brd-clr);
-}
-.spotify-tracks {
-  padding: 20px;
-  justify-content: center;
+.ascii{
+  font-size: clamp(7pt, 3vw, 14pt);
 }
 .spotify-container {
   display: inline-block;
-  margin-left: 25px;
-  margin-top: 25px;
-  overflow: hidden;
+  margin-top: 10px;
 }
-.videogames {
-  display: block;
-  margin: auto;
-  justify-content: center;
-  text-align: center;
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
-  width: 100%;
-  height: 15vh;
-}
-@media (max-width: 1423px) {
-  .playlist {
-    height: 100vh;
-  }
+  margin-top: 25vh;
+  border-top: 1px solid #848484;
 }
 @media (max-width: 763px) {
-  .playlist {
-    height: 182vh;
-  }
-}
-@media (max-width: 486px) {
-  header {
-    width: 85%;
-    border-radius: 1.2em;
-    margin-top: 0.5em;
+  footer{
+    margin-top: 45vh;
   }
 }
